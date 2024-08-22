@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>E-Okul Ortalama Hesaplama</title> <!--Css Style vs-->
+    <title>E-Okul Ortalama Hesaplama</title>
 </head>
 <body>
     <h1>E-Okul Ortalaması Hesaplayıcı</h1>
@@ -315,7 +315,7 @@
                 </div>
             </p>
             <button type="button" id="addProjectButton">Proje Ekle</button>
-            <div id="project-container" >
+            <div id="project-container" style="display: none;">
                 <select>
                     <option value="matpr9">Matematik</option>
                     <option value="edbpr9">Türk Dili ve Edebiyatı</option>
@@ -330,14 +330,14 @@
                     <option value="muzpr9">Görsel Sanatlar/Müzik</option>
                     <option value="rehpr9">Rehberlik ve Yönlendirme</option>
                     <option value="tarpr9">Tarih</option>
-                    <input type="number" id="9prk" name="9prk" placeholder="Dersin Katsayısı" min="0" max="100" required>
+                    <input type="number" id="9prk" name="9prk" placeholder="Aldığın Not" min="0" max="100" required>
                 </select>
             </div>
             <button type="button" id="abcButton1">Ek Ders/Seçmeli Ekle</button>
-            <div id="input-container">
+            <div id="input-container" style="display: none;">
             </div>
-            <input type="submit" value="Hesapla">
-            <input type="reset" value="Sıfırla">
+            <button type="submit" style="background-color: green; color: white;">Hesapla</button>
+            <button type="reset" id="resetButton" style="background-color: red; color: white;">Sıfırla</button>
         </form>
     </div>
     
@@ -347,339 +347,175 @@
             <p>
                 <h4>Matematik</h4>
                 <div>
-                    
-                    <label for="mat10_1S">1. Sınav</label> 
-                    <input type="number" id="mat10_1S" name="mat10_1S" min="0" max="100" required>
-                    
-                    
-                    <label for="mat10_2S">2. Sınav</label> 
-                    <input type="number" id="mat10_2S" name="mat10_2S" min="0" max="100" required>
-                    
-                   
-                    <label for="mat10_1P">1. Performans</label> 
-                    <input type="number" id="mat10_1P" name="mat10_1P" min="0" max="100" required>
-                    
-                    
-                    <label for="mat10_2P">1. Performans</label> 
-                    <input type="number" id="mat10_2P" name="mat10_2P" min="0" max="100" required>
+                    <input type="number" id="mat10_1S" name="mat10_1S" min="0" max="100" placeholder="1.Sınav" required>
+                    <input type="number" id="mat10_2S" name="mat10_2S" min="0" max="100" placeholder="2.Sınav" required>
+                    <input type="number" id="mat10_1P" name="mat10_1P" min="0" max="100" placeholder="1.Performans" required>
+                    <input type="number" id="mat10_2P" name="mat10_2P" min="0" max="100" placeholder="2.Performans" required>
                     
                 </div>
             </p>
             <p>
                 <h4>Türk Dili ve Edebiyatı</h4>
                 <div>
-                    <label for="tde10_1S">1. Sınav</label> 
-                    <input type="number" id="tde10_1S" name="tde10_1S" min="0" max="100" required>
-
-                    <label for="tde10_2S">2. Sınav</label> 
-                    <input type="number" id="tde10_2S" name="tde10_2S" min="0" max="100" required>
-
-                    <label for="tde10_1P">1. Performans</label> 
-                    <input type="number" id="tde10_1P" name="tde10_1P" min="0" max="100" required>
-
-                    <label for="tde10_2P">1. Performans</label> 
-                    <input type="number" id="tde10_2P" name="tde10_2P" min="0" max="100" required>
-                    </div>
-
-                    <div>
-                    <label for="tde10_1D">1. Dinleme</label> 
-                    <input type="number" id="tde10_1D" name="tde10_1D" min="0" max="100" required>
-
-                    <label for="tde10_2D">2. Dinleme</label> 
-                    <input type="number" id="tde10_2D" name="tde10_2D" min="0" max="100" required>
-
-                    <label for="tde10_1K">1. Konuşma</label> 
-                    <input type="number" id="tde10_1K" name="tde10_1K" min="0" max="100" required>
-
-                    <label for="tde10_2K">2. Konuşma</label> 
-                    <input type="number" id="tde10_2K" name="tde10_2K" min="0" max="100" required>
+                    <input type="number" id="tde10_1S" name="tde10_1S" min="0" max="100" placeholder="1.Sınav" required>
+                    <input type="number" id="tde10_2S" name="tde10_2S" min="0" max="100" placeholder="2.Sınav" required>
+                    <input type="number" id="tde10_1P" name="tde10_1P" min="0" max="100" placeholder="1.Performans" required>
+                    <input type="number" id="tde10_2P" name="tde10_2P" min="0" max="100" placeholder="2.Performans" required>
+                </div>
+                <br>
+                <div>
+                    <input type="number" id="tde10_1D" name="tde10_1D" min="0" max="100" placeholder="1.Dinleme" required>
+                    <input type="number" id="tde10_2D" name="tde10_2D" min="0" max="100" placeholder="2.Dinleme" required>
+                    <input type="number" id="tde10_1K" name="tde10_1K" min="0" max="100" placeholder="1.Konuşma" required>
+                    <input type="number" id="tde10_2K" name="tde10_2K" min="0" max="100" placeholder="2.Konuşma" required>
                 </div>
             </p>
             <p>
                 <h4>2. Yabancı Dil</h4>
                 <div>
-                    <label for="alm10_1S">1. Sınav</label> 
-                    <input type="number" id="alm10_1S" name="alm10_1S" min="0" max="100" required>
-
-                    <label for="alm10_2S">2. Sınav</label> 
-                    <input type="number" id="alm10_2S" name="alm10_2S" min="0" max="100" required>
-
-                    <label for="alm10_1P">1. Performans</label> 
-                    <input type="number" id="alm10_1P" name="alm10_1P" min="0" max="100" required>
-
-                    <label for="alm10_2P">1. Performans</label> 
-                    <input type="number" id="alm10_2P" name="alm10_2P" min="0" max="100" required>
+                    <input type="number" id="alm10_1S" name="alm10_1S" min="0" max="100" placeholder="1.Sınav"  required>
+                    <input type="number" id="alm10_2S" name="alm10_2S" min="0" max="100" placeholder="2.Sınav" required>
+                    <input type="number" id="alm10_1P" name="alm10_1P" min="0" max="100" placeholder="1.Performans" required>
+                    <input type="number" id="alm10_2P" name="alm10_2P" min="0" max="100" placeholder="2.Performans" required>
                     </div>
-
+                    <br>
                     <div>
-                    <label for="alm10_1D">1. Dinleme</label> 
-                    <input type="number" id="alm10_1D" name="alm10_1D" min="0" max="100" required>
-
-                    <label for="alm10_2D">2. Dinleme</label> 
-                    <input type="number" id="alm10_2D" name="alm10_2D" min="0" max="100" required>
-
-                    <label for="alm10_1K">1. Konuşma</label> 
-                    <input type="number" id="alm10_1K" name="alm10_1K" min="0" max="100" required>
-
-                    <label for="alm10_2K">2. Konuşma</label> 
-                    <input type="number" id="alm10_2K" name="alm10_2K" min="0" max="100" required>
+                    <input type="number" id="alm10_1D" name="alm10_1D" min="0" max="100" placeholder="1.Dinleme" required>
+                    <input type="number" id="alm10_2D" name="alm10_2D" min="0" max="100" placeholder="2.Dinleme" required>
+                    <input type="number" id="alm10_1K" name="alm10_1K" min="0" max="100" placeholder="1.Konuşma" required>
+                    <input type="number" id="alm10_2K" name="alm10_2K" min="0" max="100" placeholder="2.Konuşma" required>
                 </div>
             </p>
             <p>
                 <h4>Beden Eğitimi ve Spor</h4>
                 <div>
-                    
-                    <label for="bde10_1S">1. Sınav</label> 
-                    <input type="number" id="bde10_1S" name="bde10_1S" min="0" max="100" required>
-                    
-                    
-                    <label for="bde10_2S">2. Sınav</label> 
-                    <input type="number" id="bde10_2S" name="bde10_2S" min="0" max="100" required>
-                    
-                   
-                    <label for="bde10_1P">1. Performans</label> 
-                    <input type="number" id="bde10_1P" name="bde10_1P" min="0" max="100" required>
-                    
-                    
-                    <label for="bde10_2P">1. Performans</label> 
-                    <input type="number" id="bde10_2P" name="bde10_2P" min="0" max="100" required>
-                    
+                    <input type="number" id="bde10_1S" name="bde10_1S" min="0" max="100" placeholder="1.Sınav" required>
+                    <input type="number" id="bde10_2S" name="bde10_2S" min="0" max="100" placeholder="2.Sınav" required>
+                    <input type="number" id="bde10_1P" name="bde10_1P" min="0" max="100" placeholder="1.Performans" required>
+                    <input type="number" id="bde10_2P" name="bde10_2P" min="0" max="100" placeholder="2.Performans" required>    
                 </div>
             </p>
             <p>
                 <h4>Biyoloji</h4>
                 <div>
-                    
-                    <label for="bio10_1S">1. Sınav</label> 
-                    <input type="number" id="bio10_1S" name="bio10_1S" min="0" max="100" required>
-                    
-                    
-                    <label for="bio10_2S">2. Sınav</label> 
-                    <input type="number" id="bio10_2S" name="bio10_2S" min="0" max="100" required>
-                    
-                   
-                    <label for="bio10_1P">1. Performans</label> 
-                    <input type="number" id="bio10_1P" name="bio10_1P" min="0" max="100" required>
-                    
-                    
-                    <label for="bio10_2P">1. Performans</label> 
-                    <input type="number" id="bio10_2P" name="bio10_2P" min="0" max="100" required>
-                    
+                    <input type="number" id="bio10_1S" name="bio10_1S" min="0" max="100" placeholder="1.Sınav" required>
+                    <input type="number" id="bio10_2S" name="bio10_2S" min="0" max="100" placeholder="2.Sınav" required>
+                    <input type="number" id="bio10_1P" name="bio10_1P" min="0" max="100" placeholder="1.Performans" required>
+                    <input type="number" id="bio10_2P" name="bio10_2P" min="0" max="100" placeholder="2.Performans" required>  
                 </div>
             </p>
             <p>
                 <h4>Çoğrafya</h4>
                 <div>
-                    
-                    <label for="cog10_1S">1. Sınav</label> 
-                    <input type="number" id="cog10_1S" name="cog10_1S" min="0" max="100" required>
-                    
-                    
-                    <label for="cog10_2S">2. Sınav</label> 
-                    <input type="number" id="cog10_2S" name="cog10_2S" min="0" max="100" required>
-                    
-                   
-                    <label for="cog10_1P">1. Performans</label> 
-                    <input type="number" id="cog10_1P" name="cog10_1P" min="0" max="100" required>
-                    
-                    
-                    <label for="cog10_2P">1. Performans</label> 
-                    <input type="number" id="cog10_2P" name="cog10_2P" min="0" max="100" required>
-                    
+                    <input type="number" id="cog10_1S" name="cog10_1S" min="0" max="100" placeholder="1.Sınav"required>
+                    <input type="number" id="cog10_2S" name="cog10_2S" min="0" max="100" placeholder="2.Sınav"required>
+                    <input type="number" id="cog10_1P" name="cog10_1P" min="0" max="100" placeholder="1.Performans"required>
+                    <input type="number" id="cog10_2P" name="cog10_2P" min="0" max="100" placeholder="2.Performans"required> 
                 </div>
             </p>
             <p>
                 <h4>Din Kültürü ve Ahlak Bilgisi</h4>
                 <div>
-                    
-                    <label for="din10_1S">1. Sınav</label> 
-                    <input type="number" id="din10_1S" name="din10_1S" min="0" max="100" required>
-                    
-                    
-                    <label for="din10_2S">2. Sınav</label> 
-                    <input type="number" id="din10_2S" name="din10_2S" min="0" max="100" required>
-                    
-                   
-                    <label for="din10_1P">1. Performans</label> 
-                    <input type="number" id="din10_1P" name="din10_1P" min="0" max="100" required>
-                    
-                    
-                    <label for="din10_2P">1. Performans</label> 
-                    <input type="number" id="din10_2P" name="din10_2P" min="0" max="100" required>
-                    
+                    <input type="number" id="din10_1S" name="din10_1S" min="0" max="100" placeholder="1.Sınav"required>
+                    <input type="number" id="din10_2S" name="din10_2S" min="0" max="100" placeholder="2.Sınav"required>
+                    <input type="number" id="din10_1P" name="din10_1P" min="0" max="100" placeholder="1.Performans"required>
+                    <input type="number" id="din10_2P" name="din10_2P" min="0" max="100" placeholder="2.Performans"required>
                 </div>
             </p>
             <p>
                 <h4>Felsefe</h4>
                 <div>
-                    
-                    <label for="fel10_1S">1. Sınav</label> 
-                    <input type="number" id="fel10_1S" name="fel10_1S" min="0" max="100" required>
-                    
-                    
-                    <label for="fel10_2S">2. Sınav</label> 
-                    <input type="number" id="fel10_2S" name="fel10_2S" min="0" max="100" required>
-                    
-                   
-                    <label for="fel10_1P">1. Performans</label> 
-                    <input type="number" id="fel10_1P" name="fel10_1P" min="0" max="100" required>
-                    
-                    
-                    <label for="fel10_2P">1. Performans</label> 
-                    <input type="number" id="fel10_2P" name="fel10_2P" min="0" max="100" required>
-                    
+                    <input type="number" id="fel10_1S" name="fel10_1S" min="0" max="100" placeholder="1.Sınav" required>
+                    <input type="number" id="fel10_2S" name="fel10_2S" min="0" max="100" placeholder="2.Sınav" required>
+                    <input type="number" id="fel10_1P" name="fel10_1P" min="0" max="100" placeholder="1.Performans" required>
+                    <input type="number" id="fel10_2P" name="fel10_2P" min="0" max="100" placeholder="2.Performans" required>
                 </div>
             </p>
             <p>
                 <h4>Fizik</h4>
                 <div>
-                    
-                    <label for="fiz10_1S">1. Sınav</label> 
-                    <input type="number" id="fiz10_1S" name="fiz10_1S" min="0" max="100" required>
-                    
-                    
-                    <label for="fiz10_2S">2. Sınav</label> 
-                    <input type="number" id="fiz10_2S" name="fiz10_2S" min="0" max="100" required>
-                    
-                   
-                    <label for="fiz10_1P">1. Performans</label> 
-                    <input type="number" id="fiz10_1P" name="fiz10_1P" min="0" max="100" required>
-                    
-                    
-                    <label for="fiz10_2P">1. Performans</label> 
-                    <input type="number" id="fiz10_2P" name="fiz10_2P" min="0" max="100" required>
-                    
+                    <input type="number" id="fiz10_1S" name="fiz10_1S" min="0" max="100" placeholder="1.Sınav" required>
+                    <input type="number" id="fiz10_2S" name="fiz10_2S" min="0" max="100" placeholder="2.Sınav" required>
+                    <input type="number" id="fiz10_1P" name="fiz10_1P" min="0" max="100" placeholder="1.Performans" required>
+                    <input type="number" id="fiz10_2P" name="fiz10_2P" min="0" max="100" placeholder="2.Performans" required>
                 </div>
             </p>
             <p>
                 <h4>İngilizce</h4>
                 <div>
-                    
-                    <label for="ing10_1S">1. Sınav</label> 
-                    <input type="number" id="ing10_1S" name="ing10_1S" min="0" max="100" required>
-                    
-                    
-                    <label for="ing10_2S">2. Sınav</label> 
-                    <input type="number" id="ing10_2S" name="ing10_2S" min="0" max="100" required>
-                    
-                   
-                    <label for="ing10_1P">1. Performans</label> 
-                    <input type="number" id="ing10_1P" name="ing10_1P" min="0" max="100" required>
-                    
-                    
-                    <label for="ing10_2P">1. Performans</label> 
-                    <input type="number" id="ing10_2P" name="ing10_2P" min="0" max="100" required>
-                    
+                    <input type="number" id="ing10_1S" name="ing10_1S" min="0" max="100" placeholder="1.Sınav"required>
+                    <input type="number" id="ing10_2S" name="ing10_2S" min="0" max="100" placeholder="2.Sınav" required>
+                    <input type="number" id="ing10_1P" name="ing10_1P" min="0" max="100" placeholder="1.Performans" required>
+                    <input type="number" id="ing10_2P" name="ing10_2P" min="0" max="100" placeholder="2.Performans"required> 
+                </div>
+                <br>
+                <div>
+                    <input type="number" id="ing10_1D" name="ing10_1D" min="0" max="100" placeholder="1.Dinleme" required>
+                    <input type="number" id="ing10_2D" name="ing10_2D" min="0" max="100" placeholder="2.Dinleme" required>
+                    <input type="number" id="ing10_1K" name="ing10_1K" min="0" max="100" placeholder="1.Konuşma" required>
+                    <input type="number" id="ing10_2K" name="ing10_2K" min="0" max="100" placeholder="2.Konuşma" required>
                 </div>
             </p>
             <p>
                 <h4>Kimya</h4>
                 <div>
-                    
-                    <label for="kim10_1S">1. Sınav</label> 
-                    <input type="number" id="kim10_1S" name="kim10_1S" min="0" max="100" required>
-                    
-                    
-                    <label for="kim10_2S">2. Sınav</label> 
-                    <input type="number" id="kim10_2S" name="kim10_2S" min="0" max="100" required>
-                    
-                   
-                    <label for="kim10_1P">1. Performans</label> 
-                    <input type="number" id="kim0_1P" name="kim10_1P" min="0" max="100" required>
-                    
-                    
-                    <label for="kim10_2P">1. Performans</label> 
-                    <input type="number" id="kim10_2P" name="kim10_2P" min="0" max="100" required>
-                    
+                    <input type="number" id="kim10_1S" name="kim10_1S" min="0" max="100" placeholder="1.Sınav"required>
+                    <input type="number" id="kim10_2S" name="kim10_2S" min="0" max="100" placeholder="2.Sınav"required>
+                    <input type="number" id="kim0_1P" name="kim10_1P" min="0" max="100" placeholder="1.Performans"required>
+                    <input type="number" id="kim10_2P" name="kim10_2P" min="0" max="100" placeholder="2.Performans"required>  
                 </div>
             </p>
             <p>
                 <h4>Görsel Sanatlar/Müzik</h4>
                 <div>
-                    
-                    <label for="muz10_1S">1. Sınav</label> 
-                    <input type="number" id="muz10_1S" name="muz10_1S" min="0" max="100" required>
-                    
-                    
-                    <label for="muz10_2S">2. Sınav</label> 
-                    <input type="number" id="muz10_2S" name="muz10_2S" min="0" max="100" required>
-                    
-                   
-                    <label for="muz10_1P">1. Performans</label> 
-                    <input type="number" id="muz10_1P" name="muz10_1P" min="0" max="100" required>
-                    
-                    
-                    <label for="muz10_2P">1. Performans</label> 
-                    <input type="number" id="muz10_2P" name="muz10_2P" min="0" max="100" required>
-                    
+                    <input type="number" id="muz10_1S" name="muz10_1S" min="0" max="100" placeholder="1.Sınav"required>
+                    <input type="number" id="muz10_2S" name="muz10_2S" min="0" max="100" placeholder="2.Sınav"required>
+                    <input type="number" id="muz10_1P" name="muz10_1P" min="0" max="100" placeholder="1.Performans"required>
+                    <input type="number" id="muz10_2P" name="muz10_2P" min="0" max="100" placeholder="2.Performans"required>
                 </div>
             </p>
             <p>
                 <h4>Rehberlik ve Yönlendirme</h4>
                 <div>
-                    
-                    <label for="reh10_1S">1. Sınav</label> 
-                    <input type="number" id="reh10_1S" name="reh10_1S" min="0" max="100"  required>
-                    
-                    
-                    <label for="reh10_2S">2. Sınav</label> 
-                    <input type="number" id="reh10_2S" name="reh10_2S" min="0" max="100" required>
-                    
-                   
-                    <label for="reh10_1P">1. Performans</label> 
-                    <input type="number" id="reh10_1P" name="reh10_1P" min="0" max="100" required>
-                    
-                    
-                    <label for="reh10_2P">1. Performans</label> 
-                    <input type="number" id="reh10_2P" name="reh10_2P" min="0" max="100" required>
-                    
+                    <input type="number" id="reh10_1S" name="reh10_1S" min="0" max="100"  placeholder="1.Sınav"required>
+                    <input type="number" id="reh10_2S" name="reh10_2S" min="0" max="100" placeholder="2.Sınav"required>
+                    <input type="number" id="reh10_1P" name="reh10_1P" min="0" max="100" placeholder="1.Performans"required>
+                    <input type="number" id="reh10_2P" name="reh10_2P" min="0" max="100" placeholder="2.Performans"required>
                 </div>
             </p>
             <p>
                 <h4>Tarih</h4>
                 <div>
-                    
-                    <label for="tar10_1S">1. Sınav</label> 
-                    <input type="number" id="tar10_1S" name="tar10_1S" min="0" max="100" required>
-                    
-                    
-                    <label for="tar10_2S">2. Sınav</tlabel> 
-                    <input type="number" id="tar10_2S" name="tar10_2S" min="0" max="100" required>
-                    
-                   
-                    <label for="tar10_1P">1. Performans</label> 
-                    <input type="number" id="tar10_1P" name="tar10_1P" min="0" max="100" required>
-                    
-                    
-                    <label for="tar10_2P">1. Performans</label> 
-                    <input type="number" id="tar10_2P" name="tar10_2P" min="0" max="100" required>
-                    
+                    <input type="number" id="tar10_1S" name="tar10_1S" min="0" max="100" placeholder="1.Sınav"required>
+                    <input type="number" id="tar10_2S" name="tar10_2S" min="0" max="100" placeholder="2.Sınav"required>
+                    <input type="number" id="tar10_1P" name="tar10_1P" min="0" max="100" placeholder="1.Performans"required>
+                    <input type="number" id="tar10_2P" name="tar10_2P" min="0" max="100" placeholder="2.Performans"required>
                 </div>
             </p>
             <button type="button" id="addProjectButton">Proje Ekle</button>
-            <div id="project-container">
+            <div id="project-container" style="display: none;">
                 <select>
-                    <option value="matpr10">Matematik</option>
-                    <option value="edbpr10">Türk Dili ve Edebiyatı</option>
-                    <option value="almpr10">2. Yabancı Dil</option>
-                    <option value="bdepr10">Beden Eğitimi ve Spor</option>
-                    <option value="biopr10">Biyoloji</option>
-                    <option value="cogpr10">Coğrafya</option>
-                    <option value="dinpr10">Din Kültürü ve Ahlak Bilgisi</option>
-                    <option value="felpr10">Felsefe</option>
-                    <option value="fizpr10">Fizik</option>
-                    <option value="ingpr10">İngilizce</option>
-                    <option value="kimpr10">Kimya</option>
-                    <option value="muzpr10">Görsel Sanatlar/Müzik</option>
-                    <option value="rehpr10">Rehberlik ve Yönlendirme</option>
-                    <option value="tarpr10">Tarih</option>
-                    <input type="number" id="10prk" name="10prk" placeholder="Dersin Katsayısı" min="0" max="100" required>
+                    <option value="matpr9">Matematik</option>
+                    <option value="edbpr9">Türk Dili ve Edebiyatı</option>
+                    <option value="bdepr9">Beden Eğitimi ve Spor</option>
+                    <option value="biopr9">Biyoloji</option>
+                    <option value="cogpr9">Coğrafya</option>
+                    <option value="dinpr9">Din Kültürü ve Ahlak Bilgisi</option>
+                    <option value="tempr9">Temel Dini Bilgiler</option>
+                    <option value="fizpr9">Fizik</option>
+                    <option value="ingpr9">İngilizce</option>
+                    <option value="kimpr9">Kimya</option>
+                    <option value="muzpr9">Görsel Sanatlar/Müzik</option>
+                    <option value="rehpr9">Rehberlik ve Yönlendirme</option>
+                    <option value="tarpr9">Tarih</option>
+                    <input type="number" id="9prk" name="9prk" placeholder="Aldığın Not" min="0" max="100" required>
                 </select>
             </div>
             <button type="button" id="abcButton1">Ek Ders/Seçmeli Ekle</button>
-            <div id="input-container">
-            <input type="submit" value="Hesapla">
-            <input type="reset" value="Sıfırla">
+            <div id="input-container" style="display: none;">
+            </div>
+            <button type="submit" style="background-color: green; color: white;">Hesapla</button>
+            <button type="reset" id="resetButton" style="background-color: red; color: white;">Sıfırla</button>
         </form>
     </div>
 
@@ -1339,86 +1175,95 @@
 
     <script>
         let clickCount = 0;
-const maxClicks = 3;
+        const maxClicks = 3;
 
-function toggleInputFields(event) {
-    clickCount++;
-    const inputContainer = event.target.nextElementSibling;
+        function toggleInputFields(event) {
+            clickCount++;
+            const inputContainer = event.target.nextElementSibling;
 
-    if (clickCount <= maxClicks) {
-        if (inputContainer.style.display === 'none' || inputContainer.style.display === '') {
-            inputContainer.style.display = 'block';
+            if (clickCount <= maxClicks) {
+                if (inputContainer.style.display === 'none' || inputContainer.style.display === '') {
+                    inputContainer.style.display = 'block';
+                }
+
+                if (clickCount > 1) {
+                    inputContainer.innerHTML += `
+                        <div class="input-group">
+                            <label for="ek1_kt">Dersin Katsayısı</label>
+                            <input type="number" id="ek1kt" name="ek1kt" placeholder="Dersin Katsayısı" min="0" max="100" required>
+                            <label for="ek1_S1">1. Sınav</label> 
+                            <input type="number" id="ek1_S1" name="ek1_S1" required>
+                            <label for="ek1_S2">2. Sınav</label> 
+                            <input type="number" id="ek1_S2" name="ek1_S2" required>
+                            <label for="ek1_S2">1. Performans</label> 
+                            <input type="number" id="ek1_S2" name="ek1_S2" required>
+                            <label for="ek1_S2">2. Performans</label> 
+                            <input type="number" id="ek1_S2" name="ek1_S2" required>
+                        </div>`;
+                } else {
+                    inputContainer.innerHTML = `
+                        <div class="input-group">
+                            <label for="ek2_kt">Dersin Katsayısı</label>
+                            <input type="number" id="ek2kt" name="ek2kt" placeholder="Dersin Katsayısı" min="0" max="100" required>
+                            <label for="ek2_S1">1. Sınav</label> 
+                            <input type="number" id="ek2_S1" name="ek2_S1" required>
+                            <label for="ek2_S2">2. Sınav</label> 
+                            <input type="number" id="ek2_S2" name="ek2_S2" required>
+                            <label for="ek2_P1">1. Performans</label> 
+                            <input type="number" id="ek2_P1" name="ek2_P1" required>
+                            <label for="ek2_P2">2. Performans</label> 
+                            <input type="number" id="ek2_P2" name="ek2_P2" required>
+                        </div>`;
+                }
+            }
+
+            if (clickCount >= maxClicks) {
+                closeInputFields(event);
+            }
         }
 
-        if (clickCount > 1) {
-            inputContainer.innerHTML += `
-                <div class="input-group">
-                    <input type="number" id="ek1kt" name="ek1kt" placeholder="Dersin Katsayısı" min="0" max="100" required>
-                    <label for="ek1_S1">1. Sınav</label> 
-                    <input type="number" id="ek1_S1" name="ek1_S1" required>
-                    <label for="ek1_S2">2. Sınav</label> 
-                    <input type="number" id="ek1_S2" name="ek1_S2" required>
-                    <label for="ek1_S2">1. Performans</label> 
-                     <input type="number" id="ek1_S2" name="ek1_S2" required>
-                    <label for="ek1_S2">2. Performans</label> 
-                    <input type="number" id="ek1_S2" name="ek1_S2" required>
-                </div>`;
-        } else {
-            inputContainer.innerHTML = `
-                <div class="input-group">
-                    <input type="number" id="ek2kt" name="ek2kt" placeholder="Dersin Katsayısı" min="0" max="100" required>
-                    <label for="ek2_S1">1. Sınav</label> 
-                    <input type="number" id="ek2_S1" name="ek2_S1" required>
-                    <label for="ek2_S2">2. Sınav</label> 
-                    <input type="number" id="ek2_S2" name="ek2_S2" required>
-                    <label for="ek2_P1">1. Performans</label> 
-                     <input type="number" id="ek2_P1" name="ek2_P1" required>
-                    <label for="ek2_P2">2. Performans</label> 
-                    <input type="number" id="ek2_P2" name="ek2_P2" required>
-                </div>`;
+        function closeInputFields(event) {
+            const inputContainer = event.target.nextElementSibling;
+            inputContainer.style.display = 'none';
+            clickCount = 0;
         }
-    }
 
-    if (clickCount >= maxClicks) {
-        closeInputFields(event);
-    }
-}
+        function toggleProjectContainer() {
+            const projectContainer = document.getElementById('project-container');
+            if (projectContainer.style.display === 'none' || projectContainer.style.display === '') {
+                projectContainer.style.display = 'block';
+            } else {
+                projectContainer.style.display = 'none';
+            }
+        }
 
-function closeInputFields(event) {
-    const inputContainer = event.target.nextElementSibling;
-    inputContainer.style.display = 'none';
-    clickCount = 0;
-}
+        document.getElementById('formSelector').addEventListener('change', function() {
+            var forms = document.querySelectorAll('.form-section');
+            forms.forEach(function(form) {
+                form.style.display = 'none';
+            });
 
-function toggleProjectContainer() {
-    const projectContainer = document.getElementById('project-container');
-    if (projectContainer.style.display === 'none' || projectContainer.style.display === '') {
-        projectContainer.style.display = 'block';
-    } else {
-        projectContainer.style.display = 'none';
-    }
-}
+            var selectedForm = document.getElementById(this.value);
+            if (selectedForm) {
+                selectedForm.style.display = 'block';
+            }
+        });
 
-document.getElementById('formSelector').addEventListener('change', function() {
-    var forms = document.querySelectorAll('.form-section');
-    forms.forEach(function(form) {
-        form.style.display = 'none';
-    });
+        document.querySelectorAll('#abcButton1, #abcButton2, #abcButton3').forEach(button => {
+            button.addEventListener('click', toggleInputFields);
+            button.addEventListener('dblclick', closeInputFields);
+        });
 
-    var selectedForm = document.getElementById(this.value);
-    if (selectedForm) {
-        selectedForm.style.display = 'block';
-    }
-});
+        document.querySelectorAll('#addProjectButton').forEach(button => {
+            button.addEventListener('click', toggleProjectContainer);
+        });
 
-document.querySelectorAll('#abcButton1, #abcButton2, #abcButton3').forEach(button => {
-    button.addEventListener('click', toggleInputFields);
-    button.addEventListener('dblclick', closeInputFields);
-});
-
-document.querySelectorAll('#addProjectButton').forEach(button => {
-    button.addEventListener('click', toggleProjectContainer);
-});
+        document.getElementById('resetButton').addEventListener('click', function(event) {
+        var confirmation = confirm("Emin misiniz? Formdaki tüm bilgiler silinecek.");
+        if (!confirmation) {
+            event.preventDefault(); // İşlem iptal edilirse form sıfırlanmaz
+        }
+        });
     </script>
     
 </body>

@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f7f9fc;
+    background-color: #f5f5f5; /* Daha açık bir arka plan rengi */
     margin: 0;
     padding: 20px;
     color: #333;
@@ -8,78 +8,75 @@ body {
 
 h1 {
     text-align: center;
-    color: #112b8d;
+    color: #0056b3; /* e-Okul logosundaki mavi renk */
     margin-bottom: 40px;
-    text-shadow: #112b8d 0px 0px 22px;
-    
+    text-shadow: 0px 0px 12px rgba(0, 86, 179, 0.8); /* Hafif bir gölge ekledim */
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
-    background: #fff;
+    background: #ffffff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Daha belirgin bir gölge */
 }
 
 form {
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Daha fazla boşluk */
 }
 
 label {
     display: block;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #333;
 }
 
 input[type="text"], input[type="number"], select {
     width: calc(100% - 20px);
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 16px;
     box-sizing: border-box;
+    background-color: #f0f5ff; /* e-Okul logosuna uygun bir arka plan rengi */
+    transition: border-color 0.3s ease;
 }
 
-input[type="submit"], button {
-    background-color: #4a90e2;
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    border-color: #0056b3; /* Mavi odak rengi */
+    outline: none;
+}
+
+input[type="submit"], input[type="reset"], button {
+    background-color: #0056b3; /* e-Okul logosundaki mavi renk */
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-right: 10px; /* Butonlar arasında boşluk */
 }
 
-input[type="reset"], button {
-    background-color: #4a90e2;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+input[type="reset"] {
+    background-color: #d9534f; /* e-Okul logosundaki kırmızıya yakın bir renk */
 }
 
-input[type="submit"]:hover, button:hover {
-    background-color: #357ab8;
+input[type="submit"]:hover, input[type="reset"]:hover, button:hover {
+    background-color: #003d7e; /* Mavi butonlar için koyu ton */
+}
+
+input[type="reset"]:hover {
+    background-color: #c9302c; /* Kırmızı buton için koyu ton */
 }
 
 button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
-}
-
-#input-container {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px dashed #4a90e2;
-    background-color: #eef3f9;
-    border-radius: 5px;
 }
 
 .form-section {
@@ -93,6 +90,14 @@ button:disabled {
 
 h2 {
     text-align: center;
-    color: #000000;
+    color: #333333; /* Başlıkları e-Okul logosundaki mavi renkle hizalayın */
     margin-bottom: 20px;
+}
+
+#project-container {
+    margin-top: 20px; /* Aralarındaki boşluğu artırmak için bu değeri artırabilirsiniz */
+}
+
+#input-container {
+    margin-top: 20px; /* Aralarındaki boşluğu artırmak için bu değeri artırabilirsiniz */
 }
