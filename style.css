@@ -29,21 +29,19 @@ form {
 label {
     display: block;
     font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
+    margin-bottom: 5px; /* Bu değeri azaltarak label ile input arasındaki boşluğu küçültüyoruz */
 }
 
 input[type="text"], input[type="number"], select {
     width: calc(100% - 20px);
-    padding: 12px;
-    margin-bottom: 20px;
+    padding: 8px; /* Input içindeki padding değerini de küçülttüm */
+    margin-bottom: 10px; /* Bu değeri küçülterek inputlar arasındaki boşluğu azaltıyoruz */
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: 16px;
     box-sizing: border-box;
-    background-color: #f0f5ff; /* e-Okul logosuna uygun bir arka plan rengi */
-    transition: border-color 0.3s ease;
 }
+
 
 input[type="text"]:focus, input[type="number"]:focus, select:focus {
     border-color: #0056b3; /* Mavi odak rengi */
@@ -63,7 +61,7 @@ input[type="submit"], input[type="reset"], button {
 }
 
 input[type="reset"] {
-    background-color: #d9534f; /* e-Okul logosundaki kırmızıya yakın bir renk */
+    background-color: #d9534f; 
 }
 
 input[type="submit"]:hover, input[type="reset"]:hover, button:hover {
@@ -71,7 +69,7 @@ input[type="submit"]:hover, input[type="reset"]:hover, button:hover {
 }
 
 input[type="reset"]:hover {
-    background-color: #c9302c; /* Kırmızı buton için koyu ton */
+    background-color: #c9302c; 
 }
 
 button:disabled {
