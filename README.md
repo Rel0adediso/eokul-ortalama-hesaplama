@@ -2,6 +2,10 @@
 
 Bu proje, öğrencilere çeşitli dersler için sınav ve performans notlarını girerek ortalama hesaplama olanağı sunan bir web uygulamasıdır. Kullanıcılar, sınıf seçimini yaparak ilgili formu görüntüleyebilir ve notları girerek projeyi kullanabilirler.
 
+## Önemli Not
+
+Bu Proje Daha Yapım Aşamasındadır. Bitmemiş Kısımlar veya Hatalar Olabilir. 
+
 ## Özellikler
 
 - **Sınıf Seçimi**: 9, 10, 11 ve 12. sınıflar için form seçme olanağı.
