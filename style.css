@@ -1,75 +1,84 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5; /* Daha açık bir arka plan rengi */
+    background-color: #f0f4f8;
     margin: 0;
     padding: 20px;
     color: #333;
+    overflow-x: hidden;
 }
 
 h1 {
     text-align: center;
-    color: #0056b3; /* e-Okul logosundaki mavi renk */
+    color: #007bff;
     margin-bottom: 40px;
-    text-shadow: 0px 0px 12px rgba(0, 86, 179, 0.8); /* Hafif bir gölge ekledim */
+    text-shadow: 0px 0px 15px rgba(0, 123, 255, 0.6);
+    animation: fadeInDown 1s ease-out;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     background: #ffffff;
-    padding: 20px;
+    padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Daha belirgin bir gölge */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out;
 }
 
 form {
-    margin-bottom: 30px; /* Daha fazla boşluk */
+    margin-bottom: 30px;
 }
 
 label {
     display: block;
     font-weight: bold;
-    margin-bottom: 5px; /* Bu değeri azaltarak label ile input arasındaki boşluğu küçültüyoruz */
+    margin-bottom: 5px;
+    color: #007bff;
+    transition: color 0.3s ease;
 }
 
 input[type="text"], input[type="number"], select {
     width: calc(100% - 20px);
-    padding: 8px; /* Input içindeki padding değerini de küçülttüm */
-    margin-bottom: 10px; /* Bu değeri küçülterek inputlar arasındaki boşluğu azaltıyoruz */
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #007bff;
+    border-radius: 8px;
     font-size: 16px;
     box-sizing: border-box;
+    transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
-
 input[type="text"]:focus, input[type="number"]:focus, select:focus {
-    border-color: #0056b3; /* Mavi odak rengi */
+    border-color: #0056b3;
     outline: none;
+    transform: scale(1.02);
 }
 
 input[type="submit"], input[type="reset"], button {
-    background-color: #0056b3; /* e-Okul logosundaki mavi renk */
+    background-color: #007bff;
     color: white;
-    padding: 12px 25px;
+    padding: 12px 30px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-right: 10px; /* Butonlar arasında boşluk */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-right: 10px;
+    margin-top: 10px;
 }
 
 input[type="reset"] {
-    background-color: #d9534f; 
+    background-color: #d9534f;
 }
 
 input[type="submit"]:hover, input[type="reset"]:hover, button:hover {
-    background-color: #003d7e; /* Mavi butonlar için koyu ton */
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 15px rgba(0, 123, 255, 0.3);
 }
 
 input[type="reset"]:hover {
-    background-color: #c9302c; 
+    background-color: #c9302c;
 }
 
 button:disabled {
@@ -80,6 +89,7 @@ button:disabled {
 .form-section {
     margin-top: 20px;
     display: none;
+    animation: fadeIn 0.8s ease-out;
 }
 
 .form-section.active {
@@ -88,14 +98,37 @@ button:disabled {
 
 h2 {
     text-align: center;
-    color: #333333; /* Başlıkları e-Okul logosundaki mavi renkle hizalayın */
+    color: #007bff;
     margin-bottom: 20px;
+    animation: fadeInLeft 0.8s ease-out;
 }
 
-#project-container {
-    margin-top: 20px; /* Aralarındaki boşluğu artırmak için bu değeri artırabilirsiniz */
+#project-container, #input-container {
+    margin-top: 20px;
+    animation: fadeInRight 0.8s ease-out;
 }
 
-#input-container {
-    margin-top: 20px; /* Aralarındaki boşluğu artırmak için bu değeri artırabilirsiniz */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
 }
