@@ -1,1 +1,1 @@
-console.log("deneme")
+document.getElementById('formSelector')

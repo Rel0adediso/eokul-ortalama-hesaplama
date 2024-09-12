@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>E-Okul Ortalama Hesaplama</title>
+    <canvas id="particleCanvas"></canvas>
 </head>
 <body>
     <h1>E-Okul Ortalaması Hesaplayıcı</h1>
@@ -1742,6 +1743,11 @@
         </form>
     </div>
 
+    <div id="sonucMenu" style="display:none;">
+        <h2>Not Ortalaması:</h2>
+        <p id="ortalamaSonuc"></p>
+    </div>
+
     <script>
         let clickCount = 0;
         const maxClicks = 3;
@@ -1847,6 +1853,75 @@
         document.getElementById('addProjectButton8').addEventListener('click', toggleProjectContainer);
         document.getElementById('addProjectButton9').addEventListener('click', toggleProjectContainer);
         document.getElementById('addProjectButton10').addEventListener('click', toggleProjectContainer); 
+
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let particles = [];
+        let particleCount = 200; // Daha küçük ve çok sayıda parçacık
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        function createParticles() {
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 1.5 + 0.5, // Küçük parçacıklar
+                    vx: Math.random() * 0.5 - 0.25,
+                    vy: Math.random() * 0.5 - 0.25,
+                    color: `rgba(50, 50, 70, 0.7)` // Koyu renklerde, dikkat çekmeyen parçacıklar
+                });
+            }
+        }
+
+        function updateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0 || p.x > canvas.width) p.vx = -p.vx;
+                if (p.y < 0 || p.y > canvas.height) p.vy = -p.vy;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.fill();
+            });
+        }
+
+        function animate() {
+            updateParticles();
+            requestAnimationFrame(animate);
+        }
+
+        createParticles();
+        animate();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Başlık elementini seç
+        const header = document.querySelector('h1');
+
+        // Sınıf seçici elementini seç
+        const selectElement = document.querySelector('select');
+
+        // Seçim değiştiğinde başlığın stilini güncelle
+        selectElement.addEventListener('change', function() {
+            // Başlığa 'selected' sınıfını ekle
+            header.classList.add('selected');
+            
+            // Seçim yapıldıktan sonra eski haline döndürmek için bir süre sonra sınıfı kaldır
+            setTimeout(() => {
+                header.classList.remove('selected');
+            }, 2000); // 2 saniye sonra eski haline döner
+        });
+
+
     </script>
 
     <script src="index.js"></script>
